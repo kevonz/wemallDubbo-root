@@ -1,0 +1,7 @@
+项目结构目录：
+	wemallDubbo-service：
+		封装Model实体类，定义Dao 和 Service接口
+	wemallDubbo-provider：
+		实现上述定义的 Service接口
+		
+
