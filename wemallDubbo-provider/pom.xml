@@ -1,27 +1,78 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.lyt</groupId>
-    <artifactId>wemallDubbo-root</artifactId>
-    <version>1.0</version>
-  </parent>
-  <groupId>com.lyt</groupId>
-  <artifactId>wemallDubbo-provider</artifactId>
-  <version>1.0</version>
-  <packaging>war</packaging>
-  <name>wemallDubbo-provider Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  <build>
-    <finalName>wemallDubbo-provider</finalName>
-  </build>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.lyt</groupId>
+		<artifactId>wemallDubbo-root</artifactId>
+		<version>1.0</version>
+	</parent>
+	<groupId>com.lyt</groupId>
+	<artifactId>wemallDubbo-provider</artifactId>
+	<version>1.0</version>
+	<packaging>war</packaging>
+	<name>wemallDubbo-provider Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	
+	<profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <env>dev</env>
+            </properties>
+        </profile>
+        <profile>
+            <id>local</id>
+            <properties>
+                <env>local</env>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>product</id>
+            <properties>
+                <env>product</env>
+            </properties>
+        </profile>
+    </profiles>
+    
+    
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- 引入wemallDubbo-service（定义bean  dao service） -->
+		<dependency>
+			<groupId>com.lyt</groupId>
+			<artifactId>wemallDubbo-service</artifactId>
+			<version>1.0</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>wemallDubbo-provider</finalName>
+		<!-- 可以根据自己的需求启动不同环境的配置文件  ： 上面有配置值信息      profile  -->
+		<filters>
+            <filter>src/main/filters/filter-${env}.properties</filter>
+        </filters>
+        <!-- 为了方便用命令启动 -->
+        <plugins>
+	        <plugin>
+	            <groupId>org.apache.tomcat.maven</groupId>
+	            <artifactId>tomcat7-maven-plugin</artifactId>
+	            <version>2.2</version>
+	            <configuration>
+	                <path>/wemallDubbo-provider</path>
+	                <port>8083</port>
+	                <charset>UTF-8</charset>
+	                <server>tomcat7</server>
+	            </configuration>
+	        </plugin>
+		</plugins>
+	</build>
 </project>

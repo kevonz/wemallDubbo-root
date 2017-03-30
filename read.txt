@@ -1,7 +1,16 @@
 项目结构目录：
+	wemallDubbo ：
+		项目的根目录
+		spring-dubbo.xml这个带注释，可以更好的记住标签的作用。
+		
 	wemallDubbo-service：
 		封装Model实体类，定义Dao 和 Service接口
+		
 	wemallDubbo-provider：
 		实现上述定义的 Service接口
+		
+test-consumer	
+	是一个项目  只要引入提供者 【wemallDubbo-service】 项目的包就行了，
+	我没有作为服务项目的子项目，是为了更好的 解释 dubbo项目的作用：  仅仅提供一个服务接口就行了。
 		
 
