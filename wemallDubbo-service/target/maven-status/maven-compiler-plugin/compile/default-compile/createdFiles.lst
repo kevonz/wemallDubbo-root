@@ -1,0 +1,11 @@
+com\wemallDubbo\common\Result.class
+com\wemallDubbo\common\PageBean.class
+com\wemallDubbo\common\ResponceCode.class
+com\wemallDubbo\service\DemoService.class
+com\wemallDubbo\dao\StudentDao.class
+com\wemallDubbo\model\User.class
+com\wemallDubbo\exception\ExceptionFilter.class
+com\wemallDubbo\service\StudentService.class
+com\wemallDubbo\service\BaseMyBatisService.class
+com\wemallDubbo\model\Student.class
+com\wemallDubbo\common\RemoteObject.class

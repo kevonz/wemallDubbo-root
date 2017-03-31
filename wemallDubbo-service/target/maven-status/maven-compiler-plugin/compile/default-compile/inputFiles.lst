@@ -1,2 +1,11 @@
-D:\workspace\wemallDubbo-root\wemallDubbo-service\src\main\java\org\wemallDubbo\model\User.java
-D:\workspace\wemallDubbo-root\wemallDubbo-service\src\main\java\org\wemallDubbo\service\DemoService.java
+D:\workspace\wemallDubbo-root\wemallDubbo-service\src\main\java\com\wemallDubbo\model\Student.java
+D:\workspace\wemallDubbo-root\wemallDubbo-service\src\main\java\com\wemallDubbo\common\RemoteObject.java
+D:\workspace\wemallDubbo-root\wemallDubbo-service\src\main\java\com\wemallDubbo\common\PageBean.java
+D:\workspace\wemallDubbo-root\wemallDubbo-service\src\main\java\com\wemallDubbo\service\DemoService.java
+D:\workspace\wemallDubbo-root\wemallDubbo-service\src\main\java\com\wemallDubbo\common\Result.java
+D:\workspace\wemallDubbo-root\wemallDubbo-service\src\main\java\com\wemallDubbo\model\User.java
+D:\workspace\wemallDubbo-root\wemallDubbo-service\src\main\java\com\wemallDubbo\service\StudentService.java
+D:\workspace\wemallDubbo-root\wemallDubbo-service\src\main\java\com\wemallDubbo\exception\ExceptionFilter.java
+D:\workspace\wemallDubbo-root\wemallDubbo-service\src\main\java\com\wemallDubbo\common\ResponceCode.java
+D:\workspace\wemallDubbo-root\wemallDubbo-service\src\main\java\com\wemallDubbo\service\BaseMyBatisService.java
+D:\workspace\wemallDubbo-root\wemallDubbo-service\src\main\java\com\wemallDubbo\dao\StudentDao.java

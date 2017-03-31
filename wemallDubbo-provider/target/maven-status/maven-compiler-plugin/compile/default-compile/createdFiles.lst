@@ -1,0 +1,4 @@
+com\wemallDubbo\service\impl\DemoServiceImpl.class
+com\wemallDubbo\utils\ApplicationUtils.class
+com\wemallDubbo\service\start\Provider.class
+com\wemallDubbo\service\impl\StudentServiceImpl.class
