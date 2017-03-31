@@ -14,4 +14,9 @@
        from  student s
        limit #{start},#{end}
    </select>
+   
+   <!--查询所有学生信息-->
+   <select id="queryAll" resultMap="BaseResultMap" parameterType="map">
+       select  s.* from  student s
+   </select>
 </mapper>

@@ -16,5 +16,10 @@
 	<import resource="classpath:spring/spring-dubbo.xml"/>
 	<import resource="classpath:spring/spring-mybatis.xml"/>
 	
+	<!-- 这是用task标签执行的定时任务 -->
+	<import resource="classpath:spring/spring-task.xml"/>
+	
+	<!-- 这个也可以定时调用，但是版本太低 不兼容 -->
+<!-- 	<import resource="classpath:spring/spring-quartz.xml"/> -->
 
 </beans>

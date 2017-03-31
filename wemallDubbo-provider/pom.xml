@@ -53,6 +53,12 @@
 			<artifactId>wemallDubbo-service</artifactId>
 			<version>1.0</version>
 		</dependency>
+		<!-- 这个是  比较麻烦的定时，而且版本较低，容易冲突 -->
+		<!-- <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>3.2.2.RELEASE</version>
+		</dependency> -->
 	</dependencies>
 	<build>
 		<finalName>wemallDubbo-provider</finalName>

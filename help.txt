@@ -1,0 +1,73 @@
+0、第一次上传项目的时候--进入需要上传的项目目录，右键git bash进行后续操作
+	
+	#初始化新版本库（通过git把项目管理起来）
+	git init
+	#添加所有文件(只是在本地准备好，注意那个“.”表示所有文件)
+	git add .
+	#提交本地git仓库（引号中是说明信息）
+	git commit -a -m 'version 1.2.3'
+	#连接远程仓库
+	git remote add origin https://github.com/love-somnus/Spring.git
+	#推入远程仓库
+	git push origin master 
+
+1、拉取代码是最简单的，如下命令就搞定，选取你要拉取到的目标目录
+
+	git clone https://github.com/love-somnus/Spring.git
+
+2、修改代码提交，比第一次上传代码简单点，如下
+
+	git add .
+	git commit -a -m 'version 1.2.3'
+	git push origin master 
+	
+dubbo集群：指的是相同功能的
+	比如同一个项目 部署到不同的服务器上。当一个挂掉另外一个还在 这样就不影响消费者的使用。（需要设计配置的容错率）
+	eg:
+		在实际项目中，生产环境中，我们用failover模式时可以这样设计服务接口，遵循接口隔离原则 ，查询服务与写操作服务隔离，
+	
+		查询接口我们可以配置retries="2" 
+		
+		在写操作接口我们配置retries="0" ,如果不设置为0, 超时，会重新连接，会出现重复写的情况,所以使用failover模式时，我们要进行读写操作接口隔离，且写操作接口retries=0
+		
+	DUBBO相关资料	
+<dubbo:reference cluster="failfast" />
+
+常见容错机制：failover ，failsafe，failfase ，failback，forking，来源于阿里的定义。
+
+    Failover 失败自动切换
+
+当出现失败，重试其它服务器，通常用于读操作（推荐使用）。 重试会带来更长延迟。
+
+    Failfast  快速失败
+
+只发起一次调用，失败立即报错,通常用于非幂等性的写操作。 如果有机器正在重启，可能会出现调用失败 。
+
+    Failsafe 失败安全
+
+出现异常时，直接忽略，通常用于写入审计日志等操作。 调用信息丢失 可用于生产环境 Monitor。
+
+    Failback  失败自动恢复
+
+后台记录失败请求，定时重发。通常用于消息通知操作 不可靠，重启丢失。 可用于生产环境 Registry。
+
+    Forking  并行调用多个服务器
+
+只要一个成功即返回，通常用于实时性要求较高的读操作。 需要浪费更多服务资源   。
+
+    Broadcast 
+
+广播调用，所有提供逐个调用，任意一台报错则报错。通常用于更新提供方本地状态 速度慢，任意一台报错则报错 
+
+
+
+建表语句：
+CREATE TABLE `student` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) DEFAULT NULL,
+  `age` int(5) DEFAULT NULL,
+  `sex` varchar(32) DEFAULT NULL,
+  `createTime` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+

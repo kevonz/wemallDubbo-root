@@ -14,10 +14,19 @@ import com.wemallDubbo.model.Student;
 public interface StudentDao 
 {
 	/**
-	 * 查询学生信息
+	 * 分页查询学生信息
 	 * @param start
 	 * @param end
 	 * @return
 	 */
     List<Student> findAll(@Param("start") int start, @Param("end") int end);
+    
+    
+    /**
+	 * 查询学生信息
+	 * @param start
+	 * @param end
+	 * @return
+	 */
+    List<Student> queryAll();
 }

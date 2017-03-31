@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+    xmlns:task="http://www.springframework.org/schema/task"   
+    xsi:schemaLocation="  
+        http://www.springframework.org/schema/beans   
+        http://www.springframework.org/schema/beans/spring-beans.xsd    
+        http://www.springframework.org/schema/task   
+        http://www.springframework.org/schema/task/spring-task.xsd">  
+  
+  	<!-- 表达式可以看：http://cron.qqe2.com/ -->
+    <task:scheduled-tasks>  
+        <!-- 每隔30秒执行一次 -->  
+        <task:scheduled ref="quartzJob" method="execute" cron="*/30 * * * * ?" />
+        
+        <!-- 每个五秒执行一次 -->
+        <task:scheduled ref="queryAll" method="queryAll" cron="*/5 * * * * ?" />
+    </task:scheduled-tasks>  
+    
+    <!-- 要调用的工作类 -->  
+    <bean id="quartzJob" class="com.lyt.quartz.QuartzJob" />  
+    
+    <bean id="queryAll" class="com.wemallDubbo.service.impl.StudentServiceImpl" />  
+    
+</beans>
