@@ -125,30 +125,42 @@
         </dependency>
 
         <!--工具类-->
-        <!-- <dependency>
+        <dependency>
 			<groupId>org.htmlparser</groupId>
 			<artifactId>filterbuilder</artifactId>
+			<version>2.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.htmlparser</groupId>
 			<artifactId>htmllexer</artifactId>
+			<version>2.1</version>
 		</dependency>
-		<dependency>
-			<groupId>org.htmlparser</groupId>
-			<artifactId>htmlparser</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.htmlparser/htmlparser -->
+<dependency>
+    <groupId>org.htmlparser</groupId>
+    <artifactId>htmlparser</artifactId>
+    <version>2.1</version>
+</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpclient</artifactId>
+    <version>4.5.2</version>
+</dependency>
+
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpcore</artifactId>
+			<version>4.4.4</version>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpmime</artifactId>
-		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpmime -->
+<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpmime</artifactId>
+    <version>4.5.2</version>
+</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
 		<!-- 使用  jsoup 解析 html内容-->
 		<dependency>
